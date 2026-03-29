@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+
+<StackPane xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="controller.PlateauController"
+           fx:id="racine"
+           stylesheets="@../css/monopschool.css">
+
+    <BorderPane fx:id="plateauBorderPane">
+─
+        <top>
+            <HBox spacing="0" alignment="CENTER_LEFT">
+                <VBox fx:id="hudJ1" styleClass="hud-joueur hud-j1" spacing="4">
+                    <padding><Insets top="10" right="14" bottom="10" left="14"/></padding>
+                    <Label fx:id="labelPseudoJ1" text="Joueur 1" styleClass="hud-pseudo"/>
+                    <Label fx:id="labelEctsJ1"   text="1500 ECTS" styleClass="hud-ects"/>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <!-- ── Coin HAUT-DROIT : HUD Joueur 2 ─────────────────── -->
+                <VBox fx:id="hudJ2" styleClass="hud-joueur hud-j2" spacing="4">
+                    <padding><Insets top="10" right="14" bottom="10" left="14"/></padding>
+                    <Label fx:id="labelPseudoJ2" text="Joueur 2" styleClass="hud-pseudo"/>
+                    <Label fx:id="labelEctsJ2"   text="1500 ECTS" styleClass="hud-ects"/>
+                </VBox>
+            </HBox>
+        </top>
+
+        <center>
+            <VBox alignment="CENTER" spacing="0">
+                <!-- Barre de statut du tour -->
+                <HBox alignment="CENTER" spacing="20" styleClass="barre-statut">
+                    <Label fx:id="labelTourActuel" text="Tour de : —" styleClass="label-tour"/>
+                    <Label fx:id="labelDes" text="🎲 —" styleClass="label-des"/>
+                    <Button fx:id="btnLancerDes" text="🎲 Lancer les dés"
+                            onAction="#onLancerDes" styleClass="btn-des"/>
+                    <Button text="💾 Sauvegarder"
+                            onAction="#onSauvegarder" styleClass="btn-secondary"/>
+                </HBox>
+
+                <!-- Grille 11×11 : 40 cases autour + centre vide -->
+                <GridPane fx:id="grilleJeu"
+                          alignment="CENTER"
+                          hgap="1" vgap="1"
+                          styleClass="grille-plateau">
+                    <!-- Les cases sont ajoutées programmatiquement par le contrôleur -->
+                </GridPane>
+            </VBox>
+        </center>
+
+        <!-- ── Coin BAS-GAUCHE : HUD Joueur 3 ──────────────────────────── -->
+        <bottom>
+            <HBox spacing="0" alignment="CENTER_LEFT">
+                <VBox fx:id="hudJ3" styleClass="hud-joueur hud-j3" spacing="4">
+                    <padding><Insets top="10" right="14" bottom="10" left="14"/></padding>
+                    <Label fx:id="labelPseudoJ3" text="Joueur 3" styleClass="hud-pseudo"/>
+                    <Label fx:id="labelEctsJ3"   text="1500 ECTS" styleClass="hud-ects"/>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <!-- ── Coin BAS-DROIT : HUD Joueur 4 ──────────────────── -->
+                <VBox fx:id="hudJ4" styleClass="hud-joueur hud-j4" spacing="4">
+                    <padding><Insets top="10" right="14" bottom="10" left="14"/></padding>
+                    <Label fx:id="labelPseudoJ4" text="Joueur 4" styleClass="hud-pseudo"/>
+                    <Label fx:id="labelEctsJ4"   text="1500 ECTS" styleClass="hud-ects"/>
+                </VBox>
+            </HBox>
+        </bottom>
+
+    </BorderPane>
+
+   
+    <!--  COUCHE 2 : Popup centrale bloquante (invisible par défaut)        -->
+    <VBox fx:id="conteneurPopup"
+          alignment="CENTER"
+          spacing="16"
+          styleClass="popup-container"
+          visible="false"
+          managed="false"
+          maxWidth="420"
+          maxHeight="320">
+
+        <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+
+        <Label fx:id="labelTitrePopup"
+               text="Titre"
+               styleClass="popup-titre"
+               wrapText="true"/>
+
+        <Label fx:id="labelCorpsPopup"
+               text="Corps"
+               styleClass="popup-corps"
+               wrapText="true"
+               alignment="CENTER"/>
+
+        <HBox spacing="16" alignment="CENTER">
+            <Button fx:id="btnPopupAction"
+                    text="OK"
+                    styleClass="btn-popup-action"
+                    prefWidth="140" prefHeight="40"/>
+            <Button fx:id="btnPopupAnnuler"
+                    text="Annuler"
+                    styleClass="btn-popup-annuler"
+                    prefWidth="140" prefHeight="40"/>
+        </HBox>
+
+    </VBox>
+
+    
+    <Region fx:id="overlayFond"
+            style="-fx-background-color: rgba(0,0,0,0.45);"
+            visible="${conteneurPopup.visible}"
+            managed="${conteneurPopup.managed}"
+            mouseTransparent="false"/>
+
+</StackPane>
+
