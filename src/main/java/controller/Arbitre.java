@@ -19,6 +19,8 @@ import java.util.List;
  */
 
 public class Arbitre {
+    
+    private static final int PATRIMOINE_VICTOIRE = 6000;
 
     private List<Joueur> joueurs;
     private Plateau plateau;
@@ -81,8 +83,7 @@ public class Arbitre {
 
         // Vérifier faillite après chaque effet
         if (joueur.estEnfallite()) {
-            ui.ouvrirPopup("FAILLITE",
-                "💀 " + joueur.getPseudo() + " est en faillite !\n"
+            ui.ouvrirPopup("FAILLITE", "💀 " + joueur.getPseudo() + " est en faillite !\n"
                 + "Ses propriétés sont remises en vente.");
             mettreEnFaillite(joueur);
         }
@@ -133,5 +134,11 @@ public class Arbitre {
         }
         joueur.getListeProprietes().clear();
         joueurs.remove(joueur);
+    }
+    
+    private void veriferVictoire(Joueur joueur){
+        if (joueur.getPatrimoine() >= PATRIMOINE_VICTOIRE){
+            ui.ouvrirPopup("INFO","" + joueur.getPseudo() + " a gagné avec " + joueur.getPatrimoine() + "ECTS de patrimoine !");
+        }
     }
 }

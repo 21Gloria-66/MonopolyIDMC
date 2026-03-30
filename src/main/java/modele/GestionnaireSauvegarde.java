@@ -31,7 +31,9 @@ import modele.*;
 
 public class GestionnaireSauvegarde {
 
-    private static final String DOSSIER = "sauvegardes/";
+    private static final String DOSSIER = 
+            System.getProperty("user.home")+ "/Documents/MonopSchool/sauvegardes/";
+    
     private final Gson gson;
 
     public GestionnaireSauvegarde() {

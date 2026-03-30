@@ -22,6 +22,7 @@ import modele.GestionnaireSauvegarde;
  
 import java.net.URL;
 import java.util.*;
+import javafx.scene.control.TextInputDialog;
 /**
  *
  * @author thailakeita
@@ -100,8 +101,8 @@ public class PlateauController implements Initializable {
 
     
     //  DEPLACEMENT : "Le Saut de Pion"
-    //  Le pion ne glisse pas doucement, il saute de case en case
-    //  avec une pause de 0.2 secondes entre chaque case.
+    //  Le pion ne glisse pas doucement, il saute de case en case avec une pause de 0.2 secondes entre chaque case.
+    
    
     /*
      * Méthode principale de déplacement.
@@ -131,9 +132,7 @@ public class PlateauController implements Initializable {
      * On utilise PauseTransition plutôt que Thread.sleep() car on est dans JavaFX
      * et on ne peut pas bloquer le fil d'exécution principal.
      */
-    private void lancerSaut(Joueur joueur, Circle pion,
-                             int posCourante, int pasRestants,
-                             int nbCases, int destination) {
+    private void lancerSaut(Joueur joueur, Circle pion, int posCourante, int pasRestants, int nbCases, int destination) {
 
         // Condition d'arrêt : on est arrivé !
         if (pasRestants <= 0) {
@@ -558,9 +557,18 @@ public class PlateauController implements Initializable {
      */
     @FXML
     private void onSauvegarder() {
-        GestionnaireSauvegarde gs = new GestionnaireSauvegarde();
-        gs.sauvegarder(joueurs, plateau, joueurActuelIndex, "partie_monopschool");
-        ouvrirPopup("INFO", "Partie sauvegardee avec succes !");
+        TextInputDialog dialog = new TextInputDialog("partie_" + java.time.LocalDate.now());
+        dialog.setTitle("Sauvegarder");
+        dialog.setHeaderText("Nommer votre sauvegarde");
+        dialog.setContentText("Nom :");
+        dialog.showAndWait().ifPresent(nom -> {
+            if (!nom.trim().isEmpty()){
+                GestionnaireSauvegarde gs = new GestionnaireSauvegarde();
+                gs.sauvegarder(joueurs, plateau, joueurActuelIndex, "partie_monopschool");
+                ouvrirPopup("INFO", "Partie sauvegardee avec succes !");
+            }
+        });
+        
     }
 
 } // fin de la classe PlateauController

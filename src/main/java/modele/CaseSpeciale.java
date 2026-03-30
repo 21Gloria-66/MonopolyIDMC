@@ -21,7 +21,7 @@ public class CaseSpeciale extends Case {
         this.montantTaxe = montantTaxe;
     
     }
-    public int fetMontantTaxe(){return montantTaxe;}
+    public int getMontantTaxe(){return montantTaxe;}
     
     // notifaction à afficher dans l'interface graphique
     
@@ -29,7 +29,7 @@ public class CaseSpeciale extends Case {
         switch(this.type){
             case Depart:
                 joueur.ajouterEcts(200);
-                return"🎓 Passage par le Départ ! +\" + 200 + \" ECTS,";
+                return"🎓 Passage par le Départ ! +" + 200 + " ECTS,";
             case Allez_en_rattrapages : 
                 joueur.setPositionActuelle(10);
                 joueur.setEnPause(true);

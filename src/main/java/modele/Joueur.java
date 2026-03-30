@@ -82,6 +82,13 @@ public void decrementerPause(){
 }
 public boolean estEnfallite(){return ects < 0;}
 
+public int getPatrimoine(){
+    int valeurProprietes = listeProprietes.stream()
+            .mapToInt(CaseUE::getPrixAchat)
+            .sum();
+            return ects + valeurProprietes;
+}
+
 @Override
 public String toString(){
     return pseudo +"("+ ects + " ECTS)";
