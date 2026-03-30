@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.Configcontroller"
+      alignment="CENTER"
+      spacing="24"
+      styleClass="config-root"
+      stylesheets="@Monopschool.css">
+
+    <padding><Insets top="40" right="60" bottom="40" left="60"/></padding>
+
+    <!-- ── Logo / Titre ─────────────────────────────────────────────── -->
+    <Label text="🎓 MONOPSCHOOL" styleClass="titre-principal"/>
+    <Label text="Le Monopoly de l'IDMC" styleClass="sous-titre"/>
+
+    <Separator/>
+
+    <!-- ── Sélection du nombre de joueurs ────────────────────────────── -->
+    <VBox spacing="8" alignment="CENTER">
+        <Label text="Nombre de joueurs" styleClass="label-section"/>
+        <HBox spacing="16" alignment="CENTER">
+            <Slider fx:id="sliderNbJoueurs" prefWidth="220"/>
+            <Label fx:id="labelNbJoueurs" text="2 joueurs" styleClass="label-valeur"/>
+        </HBox>
+    </VBox>
+
+    <Separator/>
+
+    <!-- ── Champs joueurs (générés dynamiquement) ─────────────────────── -->
+    <Label text="Personnalisez vos joueurs" styleClass="label-section"/>
+    <VBox fx:id="conteneurJoueurs" spacing="10" alignment="CENTER">
+        <!-- Les HBox joueur sont injectées par ConfigController.genererChampsJoueurs() -->
+    </VBox>
+
+    <Separator/>
+
+    <!-- ── Bouton LANCER ──────────────────────────────────────────────── -->
+    <Button fx:id="btnLancer"
+            text="🚀 LANCER LA PARTIE"
+            styleClass="btn-lancer"
+            onAction="#onLancer"
+            prefWidth="260"
+            prefHeight="50"/>
+
+    <Label text="Bonne chance à tous — que les meilleurs ECTS gagnent !"
+           styleClass="label-footer"/>
+
+</VBox>

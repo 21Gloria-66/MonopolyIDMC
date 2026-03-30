@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+<StackPane xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="controller.MenuController"
+           stylesheets="@MonopSchool.css">
+
+    <VBox alignment="CENTER" spacing="28"
+          style="-fx-background-color: linear-gradient(to bottom, #0D1117, #1A1A2E, #0F3460);">
+
+        <padding><Insets top="60" right="50" bottom="60" left="50"/></padding>
+
+        <Label text="MONOPSCHOOL"
+               style="-fx-font-size:40px; -fx-font-weight:bold; -fx-text-fill:#E2B96F;"/>
+        <Label text="Le Monopoly de l'IDMC - Nancy"
+               style="-fx-font-size:14px; -fx-text-fill:#7F8C8D; -fx-font-style:italic;"/>
+
+        <Separator/>
+
+        <Button fx:id="btnNouvellePartie"
+                text="Nouvelle Partie"
+                onAction="#onNouvellePartie"
+                prefWidth="300" prefHeight="52"
+                style="-fx-background-color:#E2B96F; -fx-font-weight:bold; -fx-font-size:16px; -fx-background-radius:28;"/>
+
+        <Button fx:id="btnCharger"
+                text="Charger une Partie"
+                onAction="#onCharger"
+                prefWidth="300" prefHeight="44"
+                style="-fx-background-color:#1C2833; -fx-text-fill:#AEB6BF; -fx-background-radius:22;"/>
+
+        <Button fx:id="btnQuitter"
+                text="Quitter"
+                onAction="#onQuitter"
+                prefWidth="300" prefHeight="40"
+                style="-fx-background-color:transparent; -fx-text-fill:#566573;"/>
+
+        <VBox fx:id="panelChargement" spacing="10" visible="false" managed="false"
+              style="-fx-background-color:#1C2833; -fx-background-radius:10; -fx-padding:16;">
+            <Label text="Choisir une sauvegarde :"
+                   style="-fx-text-fill:#E2B96F; -fx-font-weight:bold;"/>
+            <ListView fx:id="listeSauvegardes" prefHeight="120"/>
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Lancer"
+                        onAction="#onLancerSauvegarde"
+                        prefWidth="130"
+                        style="-fx-background-color:#27AE60; -fx-text-fill:white; -fx-background-radius:8;"/>
+                <Button text="Annuler"
+                        onAction="#onAnnulerChargement"
+                        prefWidth="130"
+                        style="-fx-background-color:#E74C3C; -fx-text-fill:white; -fx-background-radius:8;"/>
+            </HBox>
+        </VBox>
+
+        <Separator/>
+
+        <Label fx:id="labelVersion"
+               text="v1.0 - IDMC Nancy"
+               style="-fx-font-size:11px; -fx-text-fill:#2C3E50;"/>
+
+    </VBox>
+
+</StackPane>

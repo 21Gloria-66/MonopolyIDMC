@@ -1,0 +1,230 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 24 mars 2026, 10:57:54
+    Author     : thailakeita
+*/
+* { -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+ 
+.root { -fx-background-color: #1A1A2E; }
+ 
+/* ── Écran de configuration ──────────────────────────────────────── */
+.config-root {
+    -fx-background-color: linear-gradient(to bottom, #1A1A2E, #16213E, #0F3460);
+}
+ 
+.titre-principal {
+    -fx-font-size: 42px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #E2B96F;
+    -fx-effect: dropshadow(gaussian, #E2B96F55, 12, 0, 0, 0);
+}
+ 
+.sous-titre {
+    -fx-font-size: 16px;
+    -fx-text-fill: #AEB6BF;
+    -fx-font-style: italic;
+}
+ 
+.label-section {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #E2B96F;
+}
+ 
+.label-valeur {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-min-width: 90;
+}
+ 
+.label-footer {
+    -fx-font-size: 11px;
+    -fx-text-fill: #566573;
+    -fx-font-style: italic;
+}
+ 
+.btn-lancer {
+    -fx-background-color: linear-gradient(to right, #E2B96F, #C8962B);
+    -fx-text-fill: #1A1A2E;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-background-radius: 30;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #E2B96F88, 10, 0, 0, 4);
+}
+ 
+.btn-lancer:hover {
+    -fx-background-color: linear-gradient(to right, #F0CA80, #D4A032);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+ 
+/* ── Plateau ─────────────────────────────────────────────────────── */
+.barre-statut {
+    -fx-background-color: #0F3460;
+    -fx-padding: 10 20 10 20;
+}
+ 
+.label-tour {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #E2B96F;
+}
+ 
+.label-des {
+    -fx-font-size: 20px;
+    -fx-text-fill: #FFFFFF;
+    -fx-min-width: 120;
+}
+ 
+.btn-des {
+    -fx-background-color: #E74C3C;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+}
+ 
+.btn-des:hover { -fx-background-color: #C0392B; }
+.btn-des:disabled { -fx-opacity: 0.5; }
+ 
+.btn-secondary {
+    -fx-background-color: #2C3E50;
+    -fx-text-fill: #AEB6BF;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+}
+ 
+.grille-plateau {
+    -fx-background-color: #ECF0F1;
+    -fx-padding: 2;
+}
+ 
+.case-plateau {
+    -fx-border-color: #BDC3C7;
+    -fx-border-width: 1;
+    -fx-background-color: #FAFAFA;
+    -fx-alignment: center;
+    -fx-cursor: default;
+}
+ 
+/* ── HUD Joueurs (4 coins) ───────────────────────────────────────── */
+.hud-joueur {
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, #00000066, 8, 0, 2, 2);
+    -fx-min-width: 140;
+}
+ 
+.hud-j1 { -fx-background-color: #1ABC9C22; -fx-border-color: #1ABC9C; -fx-border-radius: 10; -fx-border-width: 2; }
+.hud-j2 { -fx-background-color: #3498DB22; -fx-border-color: #3498DB; -fx-border-radius: 10; -fx-border-width: 2; }
+.hud-j3 { -fx-background-color: #E74C3C22; -fx-border-color: #E74C3C; -fx-border-radius: 10; -fx-border-width: 2; }
+.hud-j4 { -fx-background-color: #F39C1222; -fx-border-color: #F39C12; -fx-border-radius: 10; -fx-border-width: 2; }
+ 
+.hud-pseudo {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+}
+ 
+.hud-ects {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #E2B96F;
+}
+ 
+/* ── Popup centrale ──────────────────────────────────────────────── */
+.popup-container {
+    -fx-background-color: #1C2833;
+    -fx-background-radius: 16;
+    -fx-border-color: #E2B96F;
+    -fx-border-width: 2;
+    -fx-border-radius: 16;
+    -fx-effect: dropshadow(gaussian, #000000AA, 24, 0, 0, 8);
+}
+ 
+.popup-titre {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #E2B96F;
+    -fx-alignment: center;
+}
+ 
+.popup-corps {
+    -fx-font-size: 14px;
+    -fx-text-fill: #D5D8DC;
+    -fx-line-spacing: 4;
+    -fx-alignment: center;
+}
+ 
+.btn-popup-action {
+    -fx-background-color: #27AE60;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+ 
+.btn-popup-action:hover { -fx-background-color: #229954; }
+ 
+.btn-popup-annuler {
+    -fx-background-color: #E74C3C;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+ 
+.btn-popup-annuler:hover { -fx-background-color: #C0392B; }
+ 
+/* ── Menu principal ──────────────────────────────────────────────── */
+.btn-menu-principal {
+    -fx-background-color: linear-gradient(to right, #E2B96F, #C8962B);
+    -fx-text-fill: #1A1A2E;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-background-radius: 28;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #E2B96F88, 12, 0, 0, 4);
+}
+.btn-menu-principal:hover {
+    -fx-scale-x: 1.03; -fx-scale-y: 1.03;
+    -fx-background-color: linear-gradient(to right, #F0CA80, #D4A032);
+}
+ 
+.btn-menu-secondaire {
+    -fx-background-color: #1C2833;
+    -fx-text-fill: #AEB6BF;
+    -fx-font-size: 14px;
+    -fx-background-radius: 22;
+    -fx-border-color: #2C3E50;
+    -fx-border-radius: 22;
+    -fx-border-width: 1;
+    -fx-cursor: hand;
+}
+.btn-menu-secondaire:hover {
+    -fx-background-color: #2C3E50;
+    -fx-text-fill: #FFFFFF;
+}
+ 
+.btn-menu-quitter {
+    -fx-background-color: transparent;
+    -fx-text-fill: #566573;
+    -fx-font-size: 13px;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+}
+.btn-menu-quitter:hover { -fx-text-fill: #E74C3C; }
+ 
+/* ── Highlight du joueur actif dans le HUD ───────────────────────── */
+.hud-joueur-actif {
+    -fx-effect: dropshadow(gaussian, #E2B96F, 16, 0.4, 0, 0);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
