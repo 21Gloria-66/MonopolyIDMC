@@ -3,7 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package modele;
-
+//Construction d'une case avec ses propriétés de base
+//@param index ( position de la case sur le plateau (0 à 39)
+//@param nom ( nom affiché sur la case 
+//@param type ( type de case (UE,Action,Taxe etc ..)
+//
 /**
  *
  * @author thailakeita
