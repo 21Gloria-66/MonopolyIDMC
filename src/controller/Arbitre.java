@@ -19,7 +19,9 @@ import java.util.List;
  */
 
 public class Arbitre {
-
+// Applique l'effet de la case sur laquelle le joueur vient d'atterir.
+    //@param joueur ( le joueur est actif)
+    //@ param caseAtteinte ( la case sur laquelle ilse trouve 
     private List<Joueur> joueurs;
     private Plateau plateau;
     private PlateauController ui;
