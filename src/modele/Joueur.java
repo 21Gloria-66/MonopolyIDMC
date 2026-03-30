@@ -6,7 +6,8 @@ package modele;
 import java.util.ArrayList;
 import java.util.List;
 /**
- *
+ *@param montant ( montant à retirer)
+ *@return( true si le retrait à reussi, false si solde insuffisant ( fallite)
  * @author thailakeita
  */
 public class Joueur {
@@ -46,7 +47,8 @@ public class Joueur {
     public int getEcts(){return ects;}
     public void setEcts(int ects){ this.ects = ects;}
     public void ajouterEcts(int montant){this.ects+= montant;}
-    
+    // Calcule le patrimoine total joueur.
+    //@return solde ECTS + somme des prix d'achat de toutes les UE possédées
     public boolean retirerEcts(int montant){
         if(this.ects>= montant){
             this.ects-= montant;
