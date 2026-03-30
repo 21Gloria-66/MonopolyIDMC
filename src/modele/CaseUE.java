@@ -5,7 +5,9 @@
 package modele;
 
 /**
- *
+ *Calcule leloyer à payer selon la formule;
+ *loyer = loyerBase X nbUEmemeCouleur x (niveauAmelioration + 1)
+ * @return( 0 si l'ameliioration a reussi , false si niveau maximum atteint
  * @author thailakeita
  */
 public class CaseUE extends Case{
